@@ -20,7 +20,7 @@ public class Sistema implements GeneradorReportes {
         if (totalEstudiantes < estudiantes.length) {
             estudiantes[totalEstudiantes++] = e;
         } else {
-            System.out.println("❌ No se pueden registrar más estudiantes.");
+            System.out.println(" No se pueden registrar más estudiantes.");
         }
     }
 
@@ -28,7 +28,7 @@ public class Sistema implements GeneradorReportes {
         if (totalCursos < cursos.length) {
             cursos[totalCursos++] = c;
         } else {
-            System.out.println("❌ No se pueden registrar más cursos.");
+            System.out.println(" No se pueden registrar más cursos.");
         }
     }
 
@@ -36,7 +36,7 @@ public class Sistema implements GeneradorReportes {
         if (totalProfesores < profesores.length) {
             profesores[totalProfesores++] = p;
         } else {
-            System.out.println("❌ No se pueden registrar más profesores.");
+            System.out.println(" No se pueden registrar más profesores.");
         }
     }
 
@@ -64,4 +64,5 @@ public class Sistema implements GeneradorReportes {
         }
     }
 }
+
 
