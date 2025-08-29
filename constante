@@ -1,0 +1,7 @@
+package modelo;
+public class Constante {
+    public static int max_estudiantes_por_curso = 30;
+    public static int min_creditos_curso = 1;
+    public static int max_creditos_curso = 6;
+    public static String codigo_universidad = "UNIV2024";
+}
