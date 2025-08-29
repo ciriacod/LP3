@@ -1,0 +1,27 @@
+package modelo;
+
+public abstract class Persona {
+    private String nombre;
+    private String correo;
+    private String dni;
+    private String telefono;
+
+    public Persona(String nombre, String correo, String dni, String telefono) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.dni = dni;
+        this.telefono = telefono;
+    }
+
+    public String getNombre() { return nombre; }
+    public String getCorreo() { return correo; }
+    public String getDni() { return dni; }
+    public String getTelefono() { return telefono; }
+
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setCorreo(String correo) { this.correo = correo; }
+    public void setDni(String dni) { this.dni = dni; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+
+    public abstract void mostrarInformacion();
+}

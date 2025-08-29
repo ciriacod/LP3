@@ -1,0 +1,7 @@
+package modelo;
+
+public interface GeneradorReportes {
+    void reporteEstudiante();
+    void reporteCurso();
+    void reporteProfesor();
+}

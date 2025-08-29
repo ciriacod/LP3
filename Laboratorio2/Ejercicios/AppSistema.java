@@ -1,0 +1,104 @@
+package modelo;
+import java.util.Scanner;
+
+public class AppSistema {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Sistema sistema = new Sistema();
+
+        int opcion;
+        do {
+            System.out.println("\n===== MENÚ PRINCIPAL DEL SISTEMA UNIVERSITARIO =====");
+            System.out.println("1. Registrar estudiante");
+           
+            System.out.println("2. Registrar profesor");
+            System.out.println("3. Registrar curso");
+            System.out.println("4. Mostrar reporte de estudiantes");
+            System.out.println("5. Mostrar reporte de profesores");
+            System.out.println("6. Mostrar reporte de cursos");
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar buffer
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Nombre: ");
+                    String nombreEst = scanner.nextLine();
+                    System.out.print("Correo: ");
+                    String correoEst = scanner.nextLine();
+                    System.out.print("DNI: ");
+                    String dniEst = scanner.nextLine();
+                    System.out.print("Teléfono: ");
+                    String telEst = scanner.nextLine();
+                    System.out.print("Carrera: ");
+                    String carrera = scanner.nextLine();
+                    System.out.print("Año de ingreso: ");
+                    int ingreso = scanner.nextInt();
+                    scanner.nextLine();
+                    Estudiante estudiante = new Estudiante(nombreEst, correoEst, dniEst, telEst, carrera, ingreso);
+                    sistema.registrarEstudiante(estudiante);
+                    System.out.println("Estudiante registrado.");
+                    break;
+
+                case 2:
+                    System.out.print("Nombre: ");
+                    String nombreProf = scanner.nextLine();
+                    System.out.print("Correo: ");
+                    String correoProf = scanner.nextLine();
+                    System.out.print("DNI: ");
+                    String dniProf = scanner.nextLine();
+                    System.out.print("Teléfono: ");
+                    String telProf = scanner.nextLine();
+                    System.out.print("Especialidad: ");
+                    String especialidad = scanner.nextLine();
+                    System.out.print("Código del profesor: ");
+                    String codProf = scanner.nextLine();
+                    Profesor profesor = new Profesor(nombreProf, correoProf, dniProf, telProf, especialidad, codProf);
+                    sistema.registrarProfesor(profesor);
+                    System.out.println("Profesor registrado.");
+                    break;
+
+                case 3:
+                    System.out.print("Nombre del curso: ");
+                    String nombreCurso = scanner.nextLine();
+                    System.out.print("Código del curso: ");
+                    String codCurso = scanner.nextLine();
+                    System.out.print("Créditos: ");
+                    int creditos = scanner.nextInt();
+                    scanner.nextLine(); // Limpiar buffer
+                    System.out.print("Modalidad (Presencial/Virtual/Híbrido): ");
+                    String modalidad = scanner.nextLine();
+
+                    Curso curso = new Curso(codCurso, nombreCurso, creditos, modalidad, null);
+                    sistema.registrarCurso(curso);
+                    System.out.println("Curso registrado.");
+                    break;
+
+                case 4:
+                    sistema.reporteEstudiante();
+                    break;
+
+                case 5:
+                    sistema.reporteProfesor();
+                    break;
+
+                case 6:
+                    sistema.reporteCurso();
+                    break;
+
+                case 0:
+                    System.out.println("Gracias por usar el sistema. ¡Hasta pronto!");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida. Intente nuevamente.");
+                    break;
+            }
+
+        } while (opcion != 0);
+
+        scanner.close();
+    }
+}
